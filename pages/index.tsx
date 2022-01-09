@@ -3,7 +3,7 @@ import { PostCard, Categories, PostWidget } from '../components';
 
 import { getPosts } from '../services';
 
-export default function Home({ posts }) {
+export default function Home({ posts }: { posts: any }) {
   return (
     <div className="container mx-auto flex px-10 mb-8">
       <Head>
@@ -12,14 +12,8 @@ export default function Home({ posts }) {
       </Head>
       <div className='inline-block m-auto'>
         <div className='text-center items-center justify-center'>
-          {posts.map((post) => <PostCard post={post.node} key={post.title} />)}
+          {posts.map((post:any) => <PostCard post={post.node} key={post.title} />)}
         </div>
-        {/* <div className='lg:col-sapn-4 col-span-1'>
-              <div className='lg:sticky relative top-8'>
-                <PostWidget />
-                <Categories />
-              </div>
-        </div> */}
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 import { getComments } from '../services';
 
-const Comments = ({ slug }) => {
+const Comments = ({ slug }: { slug:any } ) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -22,16 +22,16 @@ const Comments = ({ slug }) => {
             {' '}
             Comentários
           </h3>
-            {comments.map((comment, index) => (
+            {comments.map(({name, createdAt, comment}, index) => (
               <div key={index} className="border-b border-gray-100 mb-4 pb-4">
                 <p className="mb-4">
-                  <span className="font-semibold">{comment.name}</span>
+                  <span className="font-semibold">{name}</span>
                   {' '}
                   em
                   {' '}
-                  {moment(comment.createdAt).format('DD, MMM, YYYY')}
+                  {moment(createdAt).format('DD, MMM, YYYY')}
                 </p>
-                <p className="whitespace-pre-line text-gray-600 w-full">{parse(comment.comment)}</p>
+                <p className="whitespace-pre-line text-gray-600 w-full">{parse(comment)}</p>
               </div>
             ))}
         </div>
