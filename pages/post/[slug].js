@@ -14,11 +14,6 @@ const PostDetails = ({ post }) => {
           <CommentsForm slug={post.slug}/>
           <Comments slug={post.slug}/>
         </div>
-        <div className='col-span-1 lg:col-sapn-4'>
-          <div className='relative lg:sticky top-8 '>
-            categorias
-          </div>
-        </div>
       </div>
     </div>
   )

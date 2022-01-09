@@ -7,8 +7,30 @@ const PostDetail = ({ post }: {post:any}) => {
     let modifiedText = text;
 
     if (obj) {
+      let mystyles = {
+        '-webkitUserModify': 'read-write-plaintext-only',
+      } as React.CSSProperties;
+
       if (obj.bold) {
         modifiedText = (<b key={index}>{text}</b>);
+      }
+
+      if (obj.href) {
+        modifiedText = (
+          <a href={obj.href} key={index} style={{fontStyle: 'italic', textDecoration: 'underline'}}>
+            {obj.children[0].text}
+          </a>
+        );
+      }
+
+      if (obj.type && obj.type == 'code-block') {
+        modifiedText = (
+          <div style={{background: 'gray', color: 'currentColor', borderRadius: '10px;'}} >
+            <code key={index} style={mystyles}>
+              {text}
+            </code>
+          </div>
+        );
       }
 
       if (obj.italic) {
