@@ -6,15 +6,11 @@ import { PostDetail, Author, Comments, CommentsForm } from '../../components'
 
 const PostDetails = ({ post }) => {
   return (
-    <div className='container mx-auto px-10 mb-8 '>
-      <div>
-        <div className='col-span-1 lg:col-sapn-8'>
-          <PostDetail post={post}/>
-          <Author author={post.author} />
-          <CommentsForm slug={post.slug}/>
-          <Comments slug={post.slug}/>
-        </div>
-      </div>
+    <div className='mx-auto px-10 mb-8 inline-block m-auto'>
+        <PostDetail post={post}/>
+        <Author author={post.author} />
+        <CommentsForm slug={post.slug}/>
+        <Comments slug={post.slug}/>
     </div>
   )
 }
