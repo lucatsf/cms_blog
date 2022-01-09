@@ -19,13 +19,23 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='hidden md:float-right md:contents'>
-                    {categories.map((category) => (
-                        <Link key={category.slug} href={`/category/${category.slug}`}>
-                            <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-                                {category.name}
-                            </span>
-                        </Link>
-                    ))}
+                    <Link href='https://github.com/lucatsf'>
+                        <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-gray-400'>
+                            Github
+                        </span>
+                    </Link>
+
+                    <Link href='https://www.linkedin.com/in/torresfelicio/'>
+                        <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-blue-700'>
+                            Linkedin
+                        </span>
+                    </Link>
+
+                    <Link href='https://twitter.com/lucatsf'>
+                        <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-blue-400'>
+                            Twitter
+                        </span>
+                    </Link>
                 </div>
             </div>
         </div>
