@@ -1,13 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import Link from 'next/link';
 
-const categories = [
-    {name: 'React', slug: 'react'},
-    {name: 'Web', slug: 'Web'}
-];
-
-const Header = () => {
+export default function Header() {
     return (
         <div className='container mx-auto px-10 mb-8'>
             <div className='border-b w-full inline-block border-blue-800 py-8'>
@@ -41,6 +36,3 @@ const Header = () => {
         </div>
     )
 }
-
-export default Header
-

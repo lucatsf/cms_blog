@@ -1,9 +1,15 @@
 import Head from 'next/head'
-import { PostCard, Categories, PostWidget } from '../components';
-
+import { PostCard } from '../components';
 import { getPosts } from '../services';
 
-export default function Home({ posts }: { posts: any }) {
+type Posts = {
+  posts: {
+    id: number,
+    node: object
+  }[]
+}
+
+export default function Home({ posts }: Posts) {
   return (
     <div className="container mx-auto flex px-10 mb-8">
       <Head>
@@ -12,7 +18,7 @@ export default function Home({ posts }: { posts: any }) {
       </Head>
       <div className='inline-block m-auto'>
         <div className='text-center items-center justify-center'>
-          {posts.map((post:any) => <PostCard post={post.node} key={post.title} />)}
+          {posts.map((post) => <PostCard post={post.node} key={post.node.slug} />)}
         </div>
       </div>
     </div>
